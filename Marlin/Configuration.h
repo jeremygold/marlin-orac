@@ -541,9 +541,18 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
+
+// JG - Orac E Calibration 17 Sep 2018:
+// Asked for 80mm, got 104, E was 500.
+// From http://zennmaster.com/makingstuff/reprap-101-calibrating-your-extruder-part-1-e-steps,
+// E = (80 / 104) * 500 
+//   = 384.6
+// Test 2 based on this gave:
+// E = (80 / 79) * 385
+//   = 389.8
 #define DEFAULT_AXIS_STEPS_PER_UNIT \
   {                                 \
-    87.147, 87.147, 1066.67, 500    \
+    87.147, 87.147, 1066.67, 390    \
   }
 
 /**
