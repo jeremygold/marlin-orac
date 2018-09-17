@@ -386,7 +386,7 @@
 //#define SLOW_PWM_HEATERS // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
 //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
 // Set/get with gcode: M301 E[extruder number, 0-2]
-#define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature 
+#define PID_FUNCTIONAL_RANGE 10 // If the temperature difference between the target temperature and the actual temperature \
                                 // is more than PID_FUNCTIONAL_RANGE then the PID will be shut off and the heater will be set to min/max.
 
 // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
@@ -620,9 +620,18 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
+
+// JG - Orac E Calibration 17 Sep 2018:
+// Asked for 80mm, got 104, E was 500.
+// From http://zennmaster.com/makingstuff/reprap-101-calibrating-your-extruder-part-1-e-steps,
+// E = (80 / 104) * 500
+//   = 384.6
+// Test 2 based on this gave:
+// E = (80 / 79) * 385
+//   = 389.8
 #define DEFAULT_AXIS_STEPS_PER_UNIT  \
     {                                \
-        87.147, 87.147, 1066.67, 500 \
+        87.147, 87.147, 1066.67, 390 \
     }
 
 /**
@@ -1131,7 +1140,7 @@
 //#define LEVEL_BED_CORNERS
 
 #if ENABLED(LEVEL_BED_CORNERS)
-#define LEVEL_CORNERS_INSET 30 // (mm) An inset for corner leveling
+#define LEVEL_CORNERS_INSET 30 // (mm) An inset for corner leveling \
                                //#define LEVEL_CENTER_TOO        // Move to the center after the last corner
 #endif
 
