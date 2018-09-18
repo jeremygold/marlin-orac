@@ -629,9 +629,11 @@
 // Test 2 based on this gave:
 // E = (80 / 79) * 385
 //   = 389.8
-#define DEFAULT_AXIS_STEPS_PER_UNIT  \
-    {                                \
-        87.147, 87.147, 1066.67, 390 \
+// Changing to 16x microstepping gives:
+// E = 390 * 16 = 6240
+#define DEFAULT_AXIS_STEPS_PER_UNIT   \
+    {                                 \
+        87.147, 87.147, 1066.67, 6240 \
     }
 
 /**
