@@ -631,9 +631,15 @@
 //   = 389.8
 // Changing to 16x microstepping gives:
 // E = 390 * 16 = 6240
+
+// Recalibrating with 16x microstepping
+// E = (80 / 76.5) * 6240 = 6525
+
+// Recalibration with more care on feed tube
+// E = (80 / 83) * 6525 = 6289
 #define DEFAULT_AXIS_STEPS_PER_UNIT   \
     {                                 \
-        87.147, 87.147, 1066.67, 6240 \
+        87.147, 87.147, 1066.67, 6289 \
     }
 
 /**
