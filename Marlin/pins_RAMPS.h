@@ -95,16 +95,15 @@
   #define X_CS_PIN         53
 #endif
 
-#define Y_STEP_PIN         60
-#define Y_DIR_PIN          61
-#define Y_ENABLE_PIN       56
-#ifndef Y_CS_PIN
-  #define Y_CS_PIN         49
-#endif
+// JG 12 Mar 18 - Swapping Z and Y to use double connector on RAMPS board
+#define Y_STEP_PIN         46
+#define Y_DIR_PIN          48
+#define Y_ENABLE_PIN       62
+#define Y_CS_PIN           40
 
-#define Z_STEP_PIN         46
-#define Z_DIR_PIN          48
-#define Z_ENABLE_PIN       62
+#define Z_STEP_PIN         60
+#define Z_DIR_PIN          61
+#define Z_ENABLE_PIN       56
 #ifndef Z_CS_PIN
   #define Z_CS_PIN         40
 #endif
@@ -192,8 +191,8 @@
 // Temperature Sensors
 //
 #define TEMP_0_PIN         13   // Analog Input
-#define TEMP_1_PIN         15   // Analog Input
-#define TEMP_BED_PIN       14   // Analog Input
+#define TEMP_1_PIN         14   // Analog Input
+#define TEMP_BED_PIN       15   // Analog Input
 
 // SPI for Max6675 or Max31855 Thermocouple
 #if DISABLED(SDSUPPORT)
